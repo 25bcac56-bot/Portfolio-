@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sham</title>
+<title>Sham | PORTFOLIO</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -17,8 +17,8 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #111827, #020617);
-  color: #e5e7eb;
+  background: radial-gradient(circle at top, #f8fafc, #e2e8f0);
+  color: #020617;
   scroll-behavior: smooth;
 }
 
@@ -27,9 +27,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   z-index: 1000;
 }
 
@@ -45,7 +45,7 @@ header {
 .navbar h1 {
   font-size: 22px;
   font-weight: 700;
-  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -54,7 +54,7 @@ header {
   margin-left: 25px;
   text-decoration: none;
   font-weight: 600;
-  color: #e5e7eb;
+  color: #020617;
   position: relative;
   transition: 0.3s;
 }
@@ -66,7 +66,7 @@ header {
   height: 2px;
   left: 0;
   bottom: -6px;
-  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
   transition: 0.3s;
 }
 
@@ -79,10 +79,10 @@ section {
   max-width: 1100px;
   margin: 120px auto 60px;
   padding: 60px 6%;
-  background: linear-gradient(145deg, #020617, #020617);
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
   border-radius: 22px;
-  box-shadow: 0 30px 70px rgba(15,23,42,0.9);
-  border: 1px solid rgba(148,163,184,0.08);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
   opacity: 0;
   transform: translateY(40px);
   transition: 0.8s ease;
@@ -96,7 +96,7 @@ section.show {
 section h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -116,20 +116,52 @@ section h2 {
 
 #projects li {
   margin-bottom: 12px;
-  color: #cbd5f5;
+  color: #334155;
 }
 
-/* CONTACT */
+/* CONTACT FORM */
+#contact form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  outline: none;
+  font-size: 14px;
+}
+
+#contact button {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact button:hover {
+  transform: scale(1.05);
+}
+
 #contact p {
-  margin-bottom: 12px;
-  color: #c7d2fe;
+  margin-top: 20px;
+  color: #475569;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 30px 20px;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 14px;
 }
 
@@ -163,7 +195,7 @@ footer {
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Hello, I’m Sham Welcome to my personal website where I share my journey,
+    Hello, I’m Sham, Welcome to my personal website where I share my journey, 
     skills, and interests.
   </p>
 </section>
@@ -171,22 +203,32 @@ footer {
 <section id="projects">
   <h2>Projects</h2>
   <ul>
-    <li>Project 1 – portfolio website</li>
-    <li>Project 2 – mini web design</li>
-    <li>Project 3 – student record system</li>
+    <li>Project 1 – Portfolio website</li>
+    <li>Project 2 – Mini web design</li>
+    <li>Project 3 – Student record system</li>
   </ul>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
+
+  <form id="contact-form" action="https://formspree.io/f/link" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
   <p>Email: 25bcac56@kristujayanti.com</p>
 </section>
 
 <footer>
-  ©️ 2025 Sham
+  © 2026 Sham
 </footer>
 
 <script>
+/* SCROLL ANIMATION */
 const sections = document.querySelectorAll("section");
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -197,6 +239,34 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+
+/* FORM SUBMISSION */
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch("https://formspree.io/f/xbdznpaz", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Failed to send message");
+    }
+  } catch (err) {
+    alert("Error sending message");
+  }
+});
 </script>
 
 </body>
